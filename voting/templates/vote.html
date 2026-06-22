@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1d3557, #457b9d);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: white;
+            width: 450px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+
+        .input-box, .select-box {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 2px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .candidate {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .candidate:hover {
+            background: #dbeafe;
+        }
+
+        .candidate input {
+            margin-right: 15px;
+            transform: scale(1.2);
+        }
+
+        .candidate img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .candidate-details h3 {
+            color: #1d3557;
+        }
+
+        .candidate-details p {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #1d3557;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: #0f172a;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Select Your Candidate</h1>
+
+    <form action="" method="post">
+    {% csrf_token %}
+
+    <!-- Voter ID -->
+    <input 
+        type="text"
+        class="input-box"
+        name="voter_id"
+        placeholder="Enter Voter ID"
+    >
+
+    <!-- Aadhaar ID -->
+    <input 
+        type="text"
+        class="input-box"
+        name="aadhaar_id"
+        placeholder="Enter Aadhaar ID"
+    >
+
+    <!-- Candidates -->
+    <label class="candidate">
+        <input type="radio" name="vote" value="TAMMINANA BHARGAV" required>
+        <img src="{% static 'images/c1.webp' %}" alt="TAMMINANA BHARGAV" width="60">
+
+        <div class="candidate-details">
+            <h3>TAMMINANA BHARGAV</h3>
+            <p>PARTY : PEOPLE RISING PARTY</p>
+        </div>
+    </label>
+
+    <label class="candidate">
+        <input type="radio" name="vote" value="CHAITANYA REDDY">
+        <img src="{% static 'images/c2.webp' %}" alt="CHAITANYA REDDY">
+        <div class="candidate-details">
+            <h3>CHAITANYA REDDY</h3>
+            <p>PARTY : PEOPLE HAND</p>
+        </div>
+    </label>
+<label class="candidate"> <input type="radio" name="vote" value="CHAITANYA REDDY"> <img src="{% static 'images/c2.webp' %}" alt="CHAITANYA REDDY" width="60"> <div class="candidate-details"> <h3>CHAITANYA REDDY</h3> <p>PARTY:PEOPLE HAND</p> </div> </label> <label class="candidate"> <input type="radio" name="vote" value="VISHNU"> <img src="{% static 'images/c3.avif' %}" alt="VISHNU" width="60"> <div class="candidate-details"> <h3>VISHNU</h3> <p>PARTY:THE RISERS</p> </div> </label> <label class="candidate"> <input type="radio" name="vote" value="Anil Verma"> <img src="{% static 'images/c4.jpg' %}" alt="RAMA KRISHNA" width="60"> <div class="candidate-details"> <h3>RAMA KRISHNA</h3> <p>PARTY : THE DEMOCRACY</p> </div> 
+</label>
+    <button type="submit" class="btn">Submit Vote</button>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        /* Navbar */
+
+        nav{
+            background:#0d47a1;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 50px;
+        }
+
+        nav h1{
+            font-size:28px;
+        }
+
+        nav ul{
+            list-style:none;
+            display:flex;
+            gap:20px;
+        }
+
+        nav ul li a{
+            color:white;
+            text-decoration:none;
+            font-size:17px;
+        }
+
+        nav ul li a:hover{
+            color:yellow;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            height:90vh;
+            background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a");
+            background-size:cover;
+            background-position:center;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+            padding:20px;
+        }
+
+        .hero-content h2{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        .hero-content p{
+            font-size:20px;
+            margin-bottom:25px;
+        }
+
+        .btn{
+            background:#ffeb3b;
+            color:black;
+            padding:12px 30px;
+            text-decoration:none;
+            border-radius:30px;
+            font-size:18px;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:white;
+        }
+
+        /* Features */
+
+        .features{
+            padding:60px 40px;
+            text-align:center;
+        }
+
+        .features h2{
+            margin-bottom:40px;
+            color:#0d47a1;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            padding:25px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3{
+            color:#009688;
+            margin-bottom:10px;
+        }
+
+        /* Footer */
+
+        footer{
+            background:#222;
+            color:white;
+            text-align:center;
+            padding:15px;
+            margin-top:30px;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+            }
+
+            nav ul{
+                margin-top:10px;
+            }
+
+            .hero-content h2{
+                font-size:35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav>
+
+        <h1>VoteSecure</h1>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="{% url 'c' %}">About</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h2>Secure Online Voting</h2>
+
+            <p>Vote Anytime | Anywhere | Securely</p>
+
+            <a href="{% url 'vote' %}" class="btn">
+                Vote with Aadhar / Voter ID
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Features -->
+
+    <section class="features">
+
+        <h2>Why Choose Us?</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>🔒 Secure</h3>
+                <p>Encrypted and safe voting process.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚡ Fast</h3>
+                <p>Vote quickly without waiting in queues.</p>
+            </div>
+
+            <div class="card">
+                <h3>🌍 Anywhere Access</h3>
+                <p>Vote from mobile or desktop easily.</p>
+            </div>
+
+            <div class="card">
+                <h3>📊 Live Results</h3>
+                <p>Transparent and instant vote counting.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>© 2026 Online Voting System</p>
+
+    </footer>
+
+</body>
+</html>
